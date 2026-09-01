@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EEE Catalogue</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f7b77f;
+        }
+
+        img {
+            width: 80px;
+            height: 100px;
+        }
+         button {
+            background-color: #d7a717;
+            border: 1px solid #555;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f5f5d;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>EEE BOOK CATALOGUE</h2>
+
+<table>
+
+    <tr>
+        <th>Book</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th>Cart</th>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://technicalpublications.in/cdn/shop/products/9789333220392_7.jpg?v=1655496248">
+            <br>BASIC ELECTRICAL ENGINEERING
+        </td>
+
+        <td>U.A BAKSHI</td>
+
+        <td>TECHNICAL PUBLICATIONS</td>
+
+        <td>RS.285</td>
+
+        <td>
+            <button onclick="addToCart('BASIC ELECTRICAL ENGINEERING', 285)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://cbspd.s3.ap-south-1.amazonaws.com/assets/images/VasOXXvSLF5LsVl15MhE1732859138.jpg">
+            <br>ELECTRICAL MACHINE DESIGN
+        </td>
+
+        <td>A.NAGOOR KANI</td>
+
+        <td>CBS PUBLICATIONS</td>
+
+        <td>RS.396</td>
+
+        <td>
+            <button onclick="addToCart('ELECTRICAL MACHINE DESIGN', 396)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+</table>
+<script>
+
+function addToCart(name, price) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existing) {
+        existing.quantity++;
+    } 
+    else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
+
+</script>
+
+</body>
+
+</html>

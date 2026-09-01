@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSE Catalogue</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f7b77f;
+        }
+
+        img {
+            width: 80px;
+            height: 100px;
+        }
+         button {
+            background-color: #d7a717;
+            border: 1px solid #555;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f5f5d;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>CSE BOOK CATALOGUE</h2>
+
+<table>
+
+    <tr>
+        <th>Book</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th>Cart</th>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_300,h_360/https://snatchbooks.com/wp-content/uploads/2020/10/Computer-System-Architecture-300x360.jpg">
+            <br>COMPUTER SYSTEM ARCHITECTURE
+        </td>
+
+        <td>M. MORRIS MANO</td>
+
+        <td>PEARSON</td>
+
+        <td>RS.400</td>
+
+        <td>
+            <button onclick="addToCart('COMPUTER SYSTEM ARCHITECTURE', 400)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://bpbonline.com/cdn/shop/products/1021_Front.jpg?v=1755670133">
+            <br>JAVA
+        </td>
+
+        <td>SWATI SAXENA</td>
+
+        <td>BPB Publications</td>
+
+        <td>RS.2500</td>
+
+        <td>
+            <button onclick="addToCart('JAVA', 2500)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+</table>
+<script>
+
+function addToCart(name, price) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existing) {
+        existing.quantity++;
+    } 
+    else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
+
+</script>
+
+</body>
+
+</html>

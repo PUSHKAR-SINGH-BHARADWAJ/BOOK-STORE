@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE Catalogue</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f7b77f;
+        }
+
+        img {
+            width: 80px;
+            height: 100px;
+        }
+         button {
+            background-color: #d7a717;
+            border: 1px solid #555;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f5f5d;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>ECE BOOK CATALOGUE</h2>
+
+<table>
+
+    <tr>
+        <th>Book</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th>Cart</th>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://jupiterbooks.in/wp-content/uploads/2023/12/IMG_20231216_0003-jpg.webp">
+            <br>DIGITAL SYSTEM DESIGN
+        </td>
+
+        <td>A.NAGOOR KANI</td>
+
+        <td>CBS PUBLISHERS</td>
+
+        <td>RS.639</td>
+
+        <td>
+            <button onclick="addToCart('DIGITAL SYSTEM DESIGN', 639)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGvApaY4sqADsgv_wGgKUDFAngs4eDtlbiysZ6wfkVpSvWSwvuC6thEbSh&s=10">
+            <br>ELECTRONIS CIRCUITS
+        </td>
+
+        <td>T.JOEL</td>
+
+        <td>LAKSHMI PUBLICATIONS</td>
+
+        <td>RS.260</td>
+
+        <td>
+            <button onclick="addToCart('ELECTRONIS CIRCUITS', 260)">
+    Add to Cart
+</button>
+        </td>
+    </tr>
+
+</table>
+<script>
+
+function addToCart(name, price) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existing) {
+        existing.quantity++;
+    } 
+    else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
+
+</script>
+
+</body>
+
+</html>
