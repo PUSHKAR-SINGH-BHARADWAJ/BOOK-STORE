@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalogue</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fff8f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d95f02;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th {
+            background-color: #f6b77c;
+            padding: 12px;
+        }
+
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .book {
+            width: 80px;
+            height: 110px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #f6b77c;
+            border: 1px solid #555;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e99550;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>CATALOGUE</h1>
+
+<table border="1">
+
+<tr>
+    <th>Cover</th>
+    <th>Book Details</th>
+    <th>Publisher</th>
+    <th>Price</th>
+    <th>Add to Cart</th>
+</tr>
+
+<!-- BOOK 1 -->
+<tr>
+
+<td>
+    <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_300,h_360/https://snatchbooks.com/wp-content/uploads/2020/10/Computer-System-Architecture-300x360.jpg"class="book">
+</td>
+
+<td>
+    <b>Book:</b> COMPUTER SYSTEM ARCHITECTURE<br>
+    <b>Author:</b> M. MORRIS MANO
+</td>
+
+<td>PEARSON</td>
+
+<td>RS.400</td>
+
+<td>
+    <button onclick="addToCart('COMPUTER SYSTEM ARCHITECTURE', 400)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+
+
+<!-- BOOK 2 -->
+<tr>
+
+<td>
+    <img src="https://bpbonline.com/cdn/shop/products/1021_Front.jpg?v=1755670133" class="book">
+</td>
+
+<td>
+    <b>Book:</b> JAVA<br>
+    <b>Author:</b> SWATI SAXENA
+</td>
+
+<td>BPB Publications</td>
+
+<td>RS.2500</td>
+
+<td>
+    <button onclick="addToCart('JAVA', 2500)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+
+
+<!-- BOOK 3 -->
+<tr>
+
+<td>
+    <img src="https://jupiterbooks.in/wp-content/uploads/2023/12/IMG_20231216_0003-jpg.webp" class="book">
+</td>
+
+<td>
+    <b>Book:</b> DIGITAL SYSYTEM DESIGN<br>
+    <b>Author:</b> A.NAGOOR KANI
+</td>
+
+<td>CBS PUBLICATIONS</td>
+
+<td>RS.639</td>
+
+<td>
+    <button onclick="addToCart('DIGITAL SYSTEM DESIGN', 639)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+
+
+<!-- BOOK 4 -->
+<tr>
+
+<td>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGvApaY4sqADsgv_wGgKUDFAngs4eDtlbiysZ6wfkVpSvWSwvuC6thEbSh&s=10" class="book">
+</td>
+
+<td>
+    <b>Book:</b> ELECTRONIS CIRCUITS<br>
+    <b>Author:</b>T.JOEL
+</td>
+
+<td>LAKSHMI PUBLICATIONS</td>
+
+<td>RS.260</td>
+
+<td>
+    <button onclick="addToCart('ELECTRONIS CIRCUITS', 260)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+<tr>
+
+<td>
+    <img src="https://technicalpublications.in/cdn/shop/products/9789333220392_7.jpg?v=1655496248" class="book">
+</td>
+
+<td>
+    <b>Book:</b> BASIC ELECTRICAL ENGINEERING<br>
+    <b>Author:</b>U.A. BAKSHI
+</td>
+
+<td>TECHNICAL PUBLICATIONS</td>
+
+<td>RS.285</td>
+
+<td>
+    <button onclick="addToCart('BASIC ELECTRICAL ENGINEERING', 285)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+<tr>
+
+<td>
+    <img src="https://cbspd.s3.ap-south-1.amazonaws.com/assets/images/VasOXXvSLF5LsVl15MhE1732859138.jpg" class="book">
+</td>
+
+<td>
+    <b>Book:</b> ELECTRICAL MACHINE DESIGN<br>
+    <b>Author:</b> A.NAGOOR KANI
+</td>
+
+<td>CBS PUBLICATIONS</td>
+
+<td>RS.396</td>
+
+<td>
+    <button onclick="addToCart('ELECTRICAL MACHINE DESIGN', 396)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+<tr>
+
+<td>
+    <img src="https://m.media-amazon.com/images/I/51fNrsfgtfL._UF1000,1000_QL80_.jpg" class="book">
+</td>
+
+<td>
+    <b>Book:</b> BASIC CIVIL ENGINEERING<br>
+    <b>Author:</b> SATISH GOPI
+</td>
+
+<td>PEARSON</td>
+
+<td>RS.388</td>
+
+<td>
+    <button onclick="addToCart('BASIC CIVIL ENGINEERING', 388)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+<tr>
+
+<td>
+    <img src="https://i0.wp.com/civiconcepts.com/wp-content/uploads/2022/01/Building-Planning-and-Drawing-Book-Pdf.jpg?resize=1024%2C1024&ssl=1" class="book">
+</td>
+
+<td>
+    <b>Book:</b> BUILDING PLANNING AND DRAWING <br>
+    <b>Author:</b> DR.N.KUMARA SWAMY
+</td>
+
+<td>CHAROTAR</td>
+
+<td>RS.640</td>
+
+<td>
+    <button onclick="addToCart('BUILDING PLANNING AND DRAWING', 640)">
+    Add to Cart
+</button>
+</td>
+
+</tr>
+
+
+</table>
+<script>
+
+function addToCart(name, price) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existing) {
+        existing.quantity++;
+    } 
+    else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
+
+</script>
+
+</body>
+</html>
